@@ -1,26 +1,51 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-function App() {
+import Header from './header.js';
+import Footer from './footer.js';
+import StateComponent from './statecom.js';
+import Cards from './components/card.js';
+import {BrowserRouter,Route} from 'react-router-dom';
+import resume from './components/resume';
+/*function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <h1>GOOD evening</h1>
+    <p>welcome all</p>
+    <Header></Header>
+    <Footer/>
+    <StateComponent/>
+    <h4>{57%34}</h4>
+
+    <Head name="bhavya">
+    <p>hello guys</p>
+    </Head>
     </div>
   );
 }
+
+function Head(props){
+  return(
+    <div>
+    <h2>this is head part {props.name}</h2>
+    {props.children}
+    </div>
+    );
+}*/
+class App extends React.Component{
+    render(){
+        return(
+            <div className="App">
+            <BrowserRouter>
+            <Route exact path="/" component={Cards}/>
+
+            <Route exact path="/resume" component={resume}/>
+            </BrowserRouter>
+            </div>
+            );
+    }
+}
+
+
 
 export default App;
